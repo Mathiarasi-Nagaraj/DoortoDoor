@@ -1,0 +1,184 @@
+
+ <?php
+ require "config.php";
+ 
+ 
+ 
+ 
+ session_start();
+ ?> 
+
+<!DOCTYPE html>
+    <head>
+        <title>Driver registration for DTD</title>
+        <style>
+            
+            .forminput{
+                text-align: left;
+                margin: 0 auto;
+                margin: 0;
+                padding: 0;
+                background-color:ghostwhite;
+            }
+            input[type=text],input[type=file], input[type=email],  input[type=textarea],  input[type=tel]:focus
+            {
+                background-color:rgb(248, 245, 240);
+                width:100%;
+                height: 40px;
+                align-content: justify;
+                vertical-align: top;
+                border: 1px solid rgba(250, 247, 247, 0.603);
+            }
+           
+           
+            input[type=text],input[type=file], input[type=email],  input[type=textarea],  input[type=tel]
+            {
+               
+                padding: 12px 20px;
+                margin:8px solid blue;
+                width:100%;
+                height: 40px;
+                box-shadow: gray;
+                border-radius: 4px;
+                border: 1px solid rgba(247, 243, 243, 0.603);
+                box-sizing:border-box;
+                display: inline-block;
+                align-content: justify;
+                vertical-align: top;
+            }
+           h1{
+            color:black;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                text-align: center;
+           }
+
+            .formlabel{
+                text-align:left;
+                color:black;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: bolder;
+                font-variant: small-caps;
+            }
+            .container{
+                border-radius: 15px;
+                background-color:white;
+               border-color: lightcoral;
+                padding: 20px;
+                width:fit-content;
+                height:fit-content;
+                align-self: right;
+                align-items: right;
+                align-content: right;
+                margin:0 auto;
+                text-align:left;
+                background-position: right top;
+               
+
+                
+            }
+          body{
+              background-image :url("formbackground.jpg");
+              background-repeat: no-repeat;
+               height: 100%;
+               vertical-align: bottom;
+             background-size: cover;
+             opacity: 0.9;
+          }
+        
+            .button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  box-sizing:border-box;
+  width:100%;
+                display: inline-block;
+                align-content: justify;
+  color: #fff;
+  background-color: #ff42b0;
+  border: none;
+  border-radius: 15px;
+  vertical-align: text-top;
+  box-shadow: 0 9px rgb(255, 157, 157);
+  
+}
+
+.button:hover {background-color: #e00f828e}
+
+.button:active {
+  background-color: #ee02b3;
+  box-shadow: 0 5px rgb(252, 200, 200);
+  transform: translateY(4px);
+}
+         
+
+        </style>
+    </head>
+    <body>
+        <form action="db.php" method="POST" enctype="multipart/form-data" style="vertical-align:top" name="driverform" id="df" accept-charset="utf-8" autocomplete="on">
+        <h1>Driver Application Form</h1>
+        <fieldset class="container">
+        <div></div>
+        <div> <label class="formlabel"  for="firstname">  FirstName</label></div>
+           <div> <input type="text" class="forminput" id="firstname" name="firstname" size="100" value="" placeholder="Surya "data-component="firstname" /></div>
+        <div> <label class="formlabel"  for="lastname"> LastName </label></div>
+            <div><input type="text"  class="forminput" id="lastname" name="lastname" size="100" value="" placeholder="Vivek"data-component="lastname" /></div>
+        <div> <label class="formlabel"  for="email">  E-mail ID</label></div>
+            <div> <input type="email"  class="forminput" id="email" name="email" size="100"  placeholder="ex: myname@example.com" data-component="email"  />
+        <div><label class="formlabel"  for="contact">  Phone number</label></div>
+            <div><input type="text"  class="forminput"  id="phone" name="phone" size="100"  value="" data-component="phone"  /></div>
+        <div> <label class="formlabel"  for="Address"> Address </label></div>
+            <div> <input type="textarea"  class="forminput"  id="address" name="address" size="100" value=""data-component="address" /></div>
+        <div> <label class="formlabel"  for="City">  City</label></div>
+             <div><input type="text"  class="forminput"  id="city" name="city" size="100" value="" placeholder="Chennai"data-component="city" /></div>
+        <div> <label class="formlabel"  for="Pincode"> Pincode </label></div>
+             <div><input type="text"  class="forminput"  id="pincode" name="pincode" size="100" value="" placeholder="641602"data-component="pincode" /></div>
+        
+        <div> <label class="formlabel"  for="Aadhar card">Upload your Aadthar,Licence,Driver photo,Vechile Photo as pdf   </label></div>
+             <div> <input type="file"  class="forminput"  id="Aadhar" name="Aadhar" multiple=""  data-imagevalidate="yes" data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" data-file-maxsize="10854" data-file-minsize="0" data-file-limit="" data-component="fileupload" /></div>
+        
+      <div>  <label class="formlabel"  for="refrence"> Who referred  you?</label></div>
+               <div>  <input type="text"  class="forminput"  id="refrence" name="refrence" size="100" value="" placeholder="by relative,in ad,etc.."data-component="refrence" /></div>
+      <div> <label class="formlabel"  for="worktime">  When you are available for work? </label></div>
+               <div> <input type="text"  class="forminput"  id="worktime" name="worktime" size="100" value="" placeholder="morning 6 to 8"data-component="worktime" /></div>
+     <div>  <label class="formlabel"  for="experience"> Do you have any previous working experience? </label></div>
+              <div>  <input type="textarea"   class="forminput"  id="experience" name="experience" size="100" value=""data-component="experience" /></div>
+    <div>  <label class="formlabel"  for="Company"> Company Name </label></div>
+             <div>  <input type="text"   class="forminput"  id="companyname" name="companyname" size="100" value="" placeholder="ARC copany"data-component="companyname" /></div>
+     <div>  <label class="formlabel"  for="Companycontact"> Company contact details </label></div>
+             <div>  <input type="text"  class="forminput"   id="companycontact" name="companycontact" size="100" value="" placeholder="Vivek"data-component="companycontact" /></div>
+     <div>   <label class="formlabel"  for="Manager"> Manager Name </label></div>
+               <div>   <input type="text"  class="forminput"   id="managername" name="managername" size="100" value="" placeholder="Vivek"data-component="managername"  /></div>
+    <div>  <label class="formlabel"  for="managercontact">Manager contact detail  </label></div>
+               <div>  <input type="text"   class="forminput"  id="managercontact" name="managercontact" size="100" value="" placeholder=""data-component="managercontact"  /></div>
+   <br> <div> <label class="formlabel"  for="assurance" ><b>Assure that you are complete responsible for delivery you deliver </b> </label>
+     <input type="checkbox" name="assurance" value="yes" size="4px" id="myCheck" onclick="myFunction()">
+     <p id="text" style="display:none">thank for your assurance!</p>
+<script>function myFunction() {
+    // Get the checkbox
+    var checkBox = document.getElementById("myCheck");
+    // Get the output text
+    var text = document.getElementById("text");
+  
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true){
+      text.style.display = "block";
+    } else {
+      text.style.display = "none";
+    }
+  }</script></div>
+  <br>
+                <div>  <label class="formlabel"  for="description">Describe your intrest for this job  </label></div>
+               
+   <div> <input type="textarea"  class="forminput" height="70%"  id="description" name="descriptions" size="100" value=""data-component="description" /></div>
+   <br/>
+   <br/>
+    
+    <input type="submit"  name='button' value="register" id="button"/>
+            </fieldset>
+        </form>
+    </body>
+   
+    
+</html>

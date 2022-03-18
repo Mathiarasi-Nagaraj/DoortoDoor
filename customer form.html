@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <style>
+    .container1{margin: 110px 250px 110px 250px;
+        padding: 50px 50px 50px 50px;
+        border: 1px solid #2E6DA4;
+        background-color: white;}
+        body{
+            background-color:#ECEDF3;
+            
+        }
+        label{
+            font-size: 16px;
+            font-family:  sans-serif;
+            margin-top: 50px;
+            padding: 2px 2px;
+            color: #2E6DA4;
+        }
+          
+          /* On screens that are 600px or less, set the background color to olive */
+       
+          
+          @media screen and (max-width: 600px) {
+            .container1 {
+                margin: 50px 10px 50px 10px;
+                padding: 20px 10px 20px 10px;
+                border: 1px solid #2E6DA4;
+                background-color: white;
+            }
+            label{
+                padding: 0px 0px;
+            }
+            
+          }
+          .files input {
+            outline: 2px dashed #92b0b3;
+            outline-offset: -10px;
+            -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+            transition: outline-offset .15s ease-in-out, background-color .15s linear;
+            padding: 120px 0px 100px 35%;
+            text-align: center !important;
+            margin: 0;
+            width: 100% !important;
+        }
+        .files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+            -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+            transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+         }
+        .files{ position:relative}
+        .files:after {  pointer-events: none;
+            position: absolute;
+            top: 140px;
+            left: 0;
+            width: 50px;
+            right: 0;
+            height: 56px;
+            content: "";
+            background-image: url(upload.png);
+            display: block;
+            margin: 0 auto;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        .color input{ background-color:#f1f1f1;}
+        .files:before {
+            position: absolute;
+            bottom: 10px;
+            left: 0;  pointer-events: none;
+            width: 100%;
+            right: 0;
+            height: 57px;
+            content: " or drag it here. ";
+            display: block;
+            margin: 0 auto;
+            color: #2ea591;
+            font-weight: 600;
+            text-transform: capitalize;
+            text-align: center;
+        }
+        @media screen and (max-width: 992px) {
+            .files input{
+                padding: 120px 0px 100px 20%; 
+            }
+          }
+          
+          /* On screens that are 600px wide or less, the background color is olive */
+          @media screen and (max-width: 600px) {
+            .files input{
+                padding: 120px 0px 100px 9%; 
+            }
+          }
+  </style>
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="stylesheet" href="formstyle.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            
+          </head>
+    <body style="background-color:#ECEDF3;">
+        
+        <div class="container1" >
+          <div class="form-header-group  header-large">
+            <div class="header-text httal htvam">
+              <h1 id="header_1" class="form-header" data-component="header" style="color: #2E6DA4;">
+                Pick-up Details
+              </h1>
+            </div>
+          </div>
+        <form class="needs-validation" action="connect.php" method="POST" enctype="multipart/form-data" novalidate>
+            <div class="form-row">
+              <div class="col">
+                <label for="validationCustom01" >First name</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom01" placeholder="First name" name="firstname" required>
+                
+                <div class="invalid-feedback">
+                    Please choose a firstname.
+                  </div>
+              </div>
+              <div class="col">
+                <label for="validationCustom02">Last name</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom02" placeholder="Last name" name="lastname" required>
+                <div class="invalid-feedback">
+                  Please choose a lastname.
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group"> 
+                  <label for="InputEmail">Email address</label> 
+                  <input type="email" class="form-control form-control-lg" id="InputEmail" placeholder="Enter email" name="mailid" aria-describedby="inputGroupPrepend" required> <!--id, class, and type are required for it too look right, placeholder will edit the text inside the input box-->
+                  </div>
+                   <div class="invalid-feedback">
+                    Please provide a valid E-mail Id.
+                  </div>
+              </div>
+            
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom08">Phone</label>
+                <input type="tel" pattern=".{10}" class="form-control form-control-lg" id="validationCustom08" placeholder="Mobile" name="phnnum" oninput="check(this)" required>
+                <div class="invalid-feedback">
+                  Please provide a valid Phone .
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-12">
+                <label for="validationCustom03">Address</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom03"  name="a1" required>
+                
+              </div>
+              
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom04">City</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom03" placeholder="City" name="a3" required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationCustom05">State</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom04" placeholder="State" name="a4" required>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationCustom06">Pin code</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom06" placeholder="pincode" name="a5" required>
+                <div class="invalid-feedback">
+                  Please provide a valid pincode.
+                </div>
+              </div>
+            
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom07">Earliest pick-up Time</label>
+                <input type="datetime-local" class="form-control form-control-lg" id="validationCustom07"  name="ept" required>
+                
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom09">Latest pick-up Time</label>
+                <input type="datetime-local" class="form-control form-control-lg" id="validationCustom07"  name="lpt"  required>
+                
+              </div>
+             </div>
+             <br>
+             <div class="form-header-group  header-large">
+              <div class="header-text httal htvam">
+                <h1 id="header_1" class="form-header" data-component="header" style="color: #2E6DA4;">
+                  Delivery Details
+                </h1>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <label for="validationCustom01" >First name</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom01" placeholder="First name" name="rfirstname" required>
+                
+                <div class="invalid-feedback">
+                    Please choose a firstname.
+                  </div>
+              </div>
+              <div class="col">
+                <label for="validationCustom02">Last name</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom02" placeholder="Last name" name="rlastname" required>
+                <div class="invalid-feedback">
+                  Please choose a lastname.
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group"> 
+                  <label for="InputEmail">Email address</label> 
+                  <input type="email" class="form-control form-control-lg" id="InputEmail" placeholder="Enter email" name="rmailid" aria-describedby="inputGroupPrepend" required> <!--id, class, and type are required for it too look right, placeholder will edit the text inside the input box-->
+                  </div>
+                   <div class="invalid-feedback">
+                    Please provide a valid E-mail Id.
+                  </div>
+              </div>
+            
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom08">Phone</label>
+                <input type="tel" pattern=".{10}" class="form-control form-control-lg" id="validationCustom08" placeholder="Mobile"  name="rphnnum" oninput="check(this)" required>
+                <div class="invalid-feedback">
+                  Please provide a valid Phone .
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-12">
+                <label for="validationCustom03">Address</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom03"  name="ra1" required>
+                
+              </div>
+              
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom04">City</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom03" placeholder="City" name="ra3" required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationCustom05">State</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom04" placeholder="State" name="ra4" required>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationCustom06">Pin code</label>
+                <input type="text" class="form-control form-control-lg" id="validationCustom06" placeholder="pincode" name="ra5" required>
+                <div class="invalid-feedback">
+                  Please provide a valid pincode.
+                </div>
+              </div>
+            </div>
+              <div class="form-row">
+                <div class="col">
+                  <label for="validationCustom04">Height</label>
+                  <input type="number" class="form-control form-control-lg" id="validationCustom03" placeholder="Height in meters" name="height" required>
+                  
+                </div>
+                <div class="col">
+                  <label for="validationCustom05">Weight</label>
+                  <input type="number" class="form-control form-control-lg" id="validationCustom04" placeholder="Weight in kg " name="weight" required>
+                  
+                </div>
+                <div class="col">
+                  <label for="validationCustom06">Width</label>
+                  <input type="number" class="form-control form-control-lg" id="validationCustom06" placeholder="width in meters" name="width" required>
+                  </div>
+              </div>
+             
+                  
+              <div class="col-md-12">
+                
+                   
+                      
+                      
+                      
+                      <div class="form-group files color">
+                        <label for="validationCustom07">Upload Your File </label>
+                        <input type="file" class="form-control" multiple=""   id="validationCustom07" name="img"  required  >
+                      </div>
+                      
+                    
+                  
+                
+                
+            </div>
+         
+               
+              
+          <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationCustom07">Dead-Line Time</label>
+                  <input type="datetime-local" class="form-control form-control-lg" id="validationCustom07"  name="dlt" required>
+                  
+                </div>
+             </div>
+
+             
+          
+            <button class="btn btn-primary" name="summit" type="submit">Submit form</button>
+            
+          </form>
+          
+          <script>
+          // Example starter JavaScript for disabling form submissions if there are invalid fields
+          (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms = document.getElementsByClassName('needs-validation');
+              // Loop over them and prevent submission
+              var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                  if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+                  form.classList.add('was-validated');
+                }, false);
+              });
+            }, false);
+          })();
+          
+          
+          </script>
+          </div>
+        </div>
+    </body>
+</html>
